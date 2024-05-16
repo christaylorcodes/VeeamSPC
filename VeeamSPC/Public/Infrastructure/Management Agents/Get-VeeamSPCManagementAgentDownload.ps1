@@ -18,6 +18,6 @@
         packageType           = $packageType
         osType                = $osType
         OutputPath            = $OutputPath
-    }    
+    }
     Invoke-VeeamSPCRequest -URI $URI -Method Get -QueryParams $QueryParams
 }

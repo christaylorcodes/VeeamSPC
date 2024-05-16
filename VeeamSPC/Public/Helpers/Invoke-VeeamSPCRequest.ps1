@@ -45,11 +45,11 @@
                         [System.Management.Automation.ErrorCategory]::ProtocolError,
                         $null
                     )
-                )                
+                )
             }
-            else { $_ }            
+            else { $_ }
         }
-        
+
         if ($Result.meta.pagingInfo) { Write-Verbose $Result.meta.pagingInfo }
         $Offset = $Result.meta.pagingInfo.count + $Result.meta.pagingInfo.offset
         # Needed to adjust throttle settings

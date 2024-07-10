@@ -4,7 +4,9 @@
     param(
         $Company,
         $siteUid,
-        [PSCredential]$Credential
+        [PSCredential]$Credential,
+        $gatewaySelectionType,
+        [array]$gatewayPoolsUids
     )
     $URI = "organizations/companies/$($Company)/sites"
     $Body = @{
@@ -13,6 +15,12 @@
             userName = $Credential.UserName
             password = $Credential.GetNetworkCredential().Password
         }
-    } | ConvertTo-Json -Depth 10
-    Invoke-VeeamSPCRequest -URI $URI -Method Post -Body $Body
+    }
+    if ($gatewaySelectionType) {
+        $Body.gatewaySelectionType = $gatewaySelectionType
+    }
+    if ($gatewayPoolsUids) {
+        $Body.gatewayPoolsUids = $gatewayPoolsUids
+    }
+    Invoke-VeeamSPCRequest -URI $URI -Method Post -Body $($Body | ConvertTo-Json)
 }

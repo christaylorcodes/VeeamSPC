@@ -12,56 +12,68 @@ Locale: en-US
 
 ## VeeamSPC Cmdlets
 ### [Connect-VeeamSPC](Docs\Connect-VeeamSPC.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
+
+### [Get-VeeamSPCBackupAgent](Docs\Get-VeeamSPCBackupAgent.md)
+{{ Fill in the Synopsis }}
+
+### [Get-VeeamSPCBackupAgentJob](Docs\Get-VeeamSPCBackupAgentJob.md)
+{{ Fill in the Synopsis }}
 
 ### [Get-VeeamSPCCloudConnectSite](Docs\Get-VeeamSPCCloudConnectSite.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
+
+### [Get-VeeamSPCCloudGatewayPool](Docs\Get-VeeamSPCCloudGatewayPool.md)
+{{ Fill in the Synopsis }}
 
 ### [Get-VeeamSPCCompany](Docs\Get-VeeamSPCCompany.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Get-VeeamSPCCompanySite](Docs\Get-VeeamSPCCompanySite.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Get-VeeamSPCDiscoveredComputer](Docs\Get-VeeamSPCDiscoveredComputer.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Get-VeeamSPCManagementAgent](Docs\Get-VeeamSPCManagementAgent.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Get-VeeamSPCManagementAgentDownload](Docs\Get-VeeamSPCManagementAgentDownload.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Get-VeeamSPCOrganization](Docs\Get-VeeamSPCOrganization.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Get-VeeamSPCUnverifiedManagementAgent](Docs\Get-VeeamSPCUnverifiedManagementAgent.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Get-VeeamSPCUser](Docs\Get-VeeamSPCUser.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Invoke-VeeamSPCRequest](Docs\Invoke-VeeamSPCRequest.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
+
+### [Join-Url](Docs\Join-Url.md)
+{{ Fill in the Synopsis }}
 
 ### [New-VeeamSPCCompany](Docs\New-VeeamSPCCompany.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [New-VeeamSPCCompanySite](Docs\New-VeeamSPCCompanySite.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Receive-VeeamSPCUnverifiedManagementAgent](Docs\Receive-VeeamSPCUnverifiedManagementAgent.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Set-VeeamSPCCompany](Docs\Set-VeeamSPCCompany.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Set-VeeamSPCCompanyBackupResource](Docs\Set-VeeamSPCCompanyBackupResource.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Set-VeeamSPCManagementAgent](Docs\Set-VeeamSPCManagementAgent.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 
 ### [Set-VeeamSPCOrganization](Docs\Set-VeeamSPCOrganization.md)
-{{ Fill in the Description }}
+{{ Fill in the Synopsis }}
 

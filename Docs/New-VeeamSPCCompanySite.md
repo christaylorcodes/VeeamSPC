@@ -13,8 +13,8 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-New-VeeamSPCCompanySite [[-Company] <Object>] [[-siteUid] <Object>] [[-Credential] <PSCredential>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+New-VeeamSPCCompanySite [[-Company] <Object>] [[-siteUid] <Object>] [[-Credential] <PSCredential>]
+ [-gatewaySelectionType <Object>] [-gatewayPoolsUids <Array>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -102,6 +102,36 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -gatewayPoolsUids
+{{ Fill gatewayPoolsUids Description }}
+
+```yaml
+Type: Array
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -gatewaySelectionType
+{{ Fill gatewaySelectionType Description }}
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

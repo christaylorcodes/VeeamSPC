@@ -50,6 +50,10 @@ Locale: en-US
 ### [Get-VeeamSPCUser](Docs\Get-VeeamSPCUser.md)
 {{ Fill in the Synopsis }}
 
+### [Initialize-VeeamSPCBackupAgent](Docs\Initialize-VeeamSPCBackupAgent.md)
+Activate Backup Agent
+Changes management mode of a Veeam backup agent with the specified UID to ManagedByConsole.
+
 ### [Invoke-VeeamSPCRequest](Docs\Invoke-VeeamSPCRequest.md)
 {{ Fill in the Synopsis }}
 

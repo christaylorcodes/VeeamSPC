@@ -5,16 +5,16 @@ online version:
 schema: 2.0.0
 ---
 
-# Receive-VeeamSPCUnverifiedManagementAgent
+# Initialize-VeeamSPCBackupAgent
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Activate Backup Agent
+Changes management mode of a Veeam backup agent with the specified UID to ManagedByConsole.
 
 ## SYNTAX
 
 ```
-Receive-VeeamSPCUnverifiedManagementAgent -unverifiedAgentUid <Object> -organizationUid <Object>
- [<CommonParameters>]
+Initialize-VeeamSPCBackupAgent [-backupAgentUid] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -24,15 +24,15 @@ Receive-VeeamSPCUnverifiedManagementAgent -unverifiedAgentUid <Object> -organiza
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Initialize-VeeamSPCBackupAgent -backupAgentUid $Agent.instanceUid
 ```
 
-{{ Add example description here }}
+Sets the backup agent to managed mode activation
 
 ## PARAMETERS
 
-### -organizationUid
-{{ Fill organizationUid Description }}
+### -backupAgentUid
+{{ Fill backupAgentUid Description }}
 
 ```yaml
 Type: Object
@@ -40,22 +40,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -unverifiedAgentUid
-{{ Fill unverifiedAgentUid Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

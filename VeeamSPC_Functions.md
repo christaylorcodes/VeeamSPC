@@ -20,6 +20,9 @@ Locale: en-US
 ### [Get-VeeamSPCBackupAgentJob](Docs\Get-VeeamSPCBackupAgentJob.md)
 {{ Fill in the Synopsis }}
 
+### [Get-VeeamSPCBackupRepository](Docs\Get-VeeamSPCBackupRepository.md)
+Returns a collection resource representation of all Veeam Backup & Replication servers.
+
 ### [Get-VeeamSPCCloudConnectSite](Docs\Get-VeeamSPCCloudConnectSite.md)
 {{ Fill in the Synopsis }}
 
@@ -62,6 +65,9 @@ Changes management mode of a Veeam backup agent with the specified UID to Manage
 
 ### [New-VeeamSPCCompany](Docs\New-VeeamSPCCompany.md)
 {{ Fill in the Synopsis }}
+
+### [New-VeeamSPCCompanyBackupResource](Docs\New-VeeamSPCCompanyBackupResource.md)
+Allocate a new cloud backup resource to a company with the specified UID.
 
 ### [New-VeeamSPCCompanySite](Docs\New-VeeamSPCCompanySite.md)
 {{ Fill in the Synopsis }}

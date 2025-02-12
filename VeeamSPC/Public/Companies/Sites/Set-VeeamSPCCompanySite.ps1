@@ -1,11 +1,13 @@
-﻿function Set-VeeamSPCOrganization {
+﻿function Set-VeeamSPCCompanySite {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '', Justification = 'Used by sub-function')]
     [CmdletBinding(SupportsShouldProcess)]
     param(
         [Parameter(Mandatory, ParameterSetName = 'Single', Position = 0)]
         [Parameter(Mandatory, ParameterSetName = 'Multi', Position = 0)]
-        [Alias('OrganizationID')]
-        $organizationUid,
+        $companyUid,
+        [Parameter(Mandatory, ParameterSetName = 'Single', Position = 1)]
+        [Parameter(Mandatory, ParameterSetName = 'Multi', Position = 1)]
+        $siteUid,
         [Parameter(Mandatory, ParameterSetName = 'Single')]
         [ValidateSet('add', 'replace', 'test', 'remove', 'move', 'copy')]
         $OP,
@@ -18,7 +20,7 @@
         [Parameter(Mandatory, ParameterSetName = 'Multi')]
         [hashtable[]]$Multi
     )
-    $URI = '/organizations/{0}' -f $organizationUid
+    $URI = "/organizations/companies/$companyUid/sites/$siteUid"
     if ($Multi) { $Body = ConvertTo-Json $Multi }
     else {
         $Patch = @{
@@ -26,7 +28,9 @@
             path  = $Path
             op    = $OP
         }
-        if ($From) { $Patch.From = $From }
+        if ($From) {
+            $Patch.From = $From
+        }
         $Body = ConvertTo-Json @($Patch)
     }
     Invoke-VeeamSPCRequest -URI $URI -Method Patch -Body $Body

@@ -12,8 +12,14 @@ schema: 2.0.0
 
 ## SYNTAX
 
+### Multi
 ```
-Set-VeeamSPCCompany [-CompanyID] <Object> [-OP] <Object> [-Value] <Object> [-Path] <Object> [[-From] <Object>]
+Set-VeeamSPCCompany -companyUid <Object> -Multi <Hashtable[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Single
+```
+Set-VeeamSPCCompany -companyUid <Object> [-OP] <Object> [-Value] <String> [[-From] <String>] [-Path] <Object>
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -30,21 +36,6 @@ PS C:\> {{ Add example code here }}
 {{ Add example description here }}
 
 ## PARAMETERS
-
-### -CompanyID
-{{ Fill CompanyID Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
@@ -65,8 +56,8 @@ Accept wildcard characters: False
 {{ Fill From Description }}
 
 ```yaml
-Type: Object
-Parameter Sets: (All)
+Type: String
+Parameter Sets: Single
 Aliases:
 
 Required: False
@@ -81,7 +72,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Object
-Parameter Sets: (All)
+Parameter Sets: Single
 Aliases:
 Accepted values: add, replace, test, remove, move, copy
 
@@ -97,7 +88,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Object
-Parameter Sets: (All)
+Parameter Sets: Single
 Aliases:
 
 Required: True
@@ -111,8 +102,8 @@ Accept wildcard characters: False
 {{ Fill Value Description }}
 
 ```yaml
-Type: Object
-Parameter Sets: (All)
+Type: String
+Parameter Sets: Single
 Aliases:
 
 Required: True
@@ -132,6 +123,36 @@ Parameter Sets: (All)
 Aliases: wi
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -companyUid
+{{ Fill companyUid Description }}
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: CompanyID
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Multi
+{{ Fill Multi Description }}
+
+```yaml
+Type: Hashtable[]
+Parameter Sets: Multi
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

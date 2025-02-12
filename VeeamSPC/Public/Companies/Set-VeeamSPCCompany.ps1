@@ -2,25 +2,32 @@
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '', Justification = 'Used by sub-function')]
     [CmdletBinding(SupportsShouldProcess)]
     param(
-        [Parameter(Mandatory)]
-        $CompanyID,
+        [Parameter(Mandatory, ParameterSetName = 'Single', Position = 0)]
+        [Parameter(Mandatory, ParameterSetName = 'Multi', Position = 0)]
+        [Alias('CompanyID')]
+        $companyUid,
+        [Parameter(Mandatory, ParameterSetName = 'Single')]
         [ValidateSet('add', 'replace', 'test', 'remove', 'move', 'copy')]
-        [Parameter(Mandatory)]
         $OP,
-        [Parameter(Mandatory)]
-        $Value,
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory, ParameterSetName = 'Single')]
+        [string]$Value,
+        [Parameter(ParameterSetName = 'Single')]
+        [string]$From,
+        [Parameter(Mandatory, ParameterSetName = 'Single')]
         $Path,
-        $From
+        [Parameter(Mandatory, ParameterSetName = 'Multi')]
+        [hashtable[]]$Multi
     )
-    $URI = "/organizations/companies/$($CompanyID)"
-    $Body = ConvertTo-Json -Depth 10 @(
-        @{
+    $URI = '/organizations/companies/{0}' -f $companyUid
+    if ($Multi) { $Body = ConvertTo-Json $Multi }
+    else {
+        $Patch = @{
             value = $Value
             path  = $Path
-            from  = $From
             op    = $OP
         }
-    )
+        if ($From) { $Patch.From = $From }
+        $Body = ConvertTo-Json @($Patch)
+    }
     Invoke-VeeamSPCRequest -URI $URI -Method Patch -Body $Body
 }

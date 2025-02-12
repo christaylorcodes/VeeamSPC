@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Set-VeeamSPCCompanyBackupResource
+# Set-VeeamSPCCompanySite
 
 ## SYNOPSIS
 {{ Fill in the Synopsis }}
@@ -14,14 +14,14 @@ schema: 2.0.0
 
 ### Multi
 ```
-Set-VeeamSPCCompanyBackupResource -companyUid <Object> -siteUid <Object> -resourceUid <Object>
- -Multi <Hashtable[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-VeeamSPCCompanySite [-companyUid] <Object> [-siteUid] <Object> -Multi <Hashtable[]> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### Single
 ```
-Set-VeeamSPCCompanyBackupResource -companyUid <Object> -siteUid <Object> -resourceUid <Object> [-OP] <Object>
- [-Value] <String> [[-From] <String>] [-Path] <Object> [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-VeeamSPCCompanySite [-companyUid] <Object> [-siteUid] <Object> -OP <Object> -Value <String>
+ [-From <String>] -Path <Object> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,7 +62,22 @@ Parameter Sets: Single
 Aliases:
 
 Required: False
-Position: 6
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Multi
+{{ Fill Multi Description }}
+
+```yaml
+Type: Hashtable[]
+Parameter Sets: Multi
+Aliases:
+
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -78,7 +93,7 @@ Aliases:
 Accepted values: add, replace, test, remove, move, copy
 
 Required: True
-Position: 3
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -93,7 +108,7 @@ Parameter Sets: Single
 Aliases:
 
 Required: True
-Position: 5
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -108,7 +123,7 @@ Parameter Sets: Single
 Aliases:
 
 Required: True
-Position: 4
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -136,40 +151,10 @@ Accept wildcard characters: False
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: Company
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Multi
-{{ Fill Multi Description }}
-
-```yaml
-Type: Hashtable[]
-Parameter Sets: Multi
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -resourceUid
-{{ Fill resourceUid Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases: Resource
-
-Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -181,10 +166,10 @@ Accept wildcard characters: False
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: Site
+Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -196,6 +181,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 ## OUTPUTS
 
 ### System.Object

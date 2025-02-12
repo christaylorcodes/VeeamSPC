@@ -32,6 +32,9 @@ Returns a collection resource representation of all Veeam Backup & Replication s
 ### [Get-VeeamSPCCompany](Docs\Get-VeeamSPCCompany.md)
 {{ Fill in the Synopsis }}
 
+### [Get-VeeamSPCCompanyBackupResource](Docs\Get-VeeamSPCCompanyBackupResource.md)
+{{ Fill in the Synopsis }}
+
 ### [Get-VeeamSPCCompanySite](Docs\Get-VeeamSPCCompanySite.md)
 {{ Fill in the Synopsis }}
 
@@ -79,6 +82,9 @@ Allocate a new cloud backup resource to a company with the specified UID.
 {{ Fill in the Synopsis }}
 
 ### [Set-VeeamSPCCompanyBackupResource](Docs\Set-VeeamSPCCompanyBackupResource.md)
+{{ Fill in the Synopsis }}
+
+### [Set-VeeamSPCCompanySite](Docs\Set-VeeamSPCCompanySite.md)
 {{ Fill in the Synopsis }}
 
 ### [Set-VeeamSPCManagementAgent](Docs\Set-VeeamSPCManagementAgent.md)

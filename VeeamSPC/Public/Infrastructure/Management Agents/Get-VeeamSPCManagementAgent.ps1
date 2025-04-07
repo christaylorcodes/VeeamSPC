@@ -1,4 +1,5 @@
 ﻿function Get-VeeamSPCManagementAgent {
+    [CmdletBinding()]
     param(
         $AgentId
     )

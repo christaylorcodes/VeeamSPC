@@ -1,4 +1,5 @@
 ﻿function Get-VeeamSPCCompanySite {
+    [CmdletBinding()]
     param(
         $Company,
         $Site,

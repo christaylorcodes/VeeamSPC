@@ -1,4 +1,5 @@
 ﻿function Get-VeeamSPCBackupAgent {
+    [CmdletBinding()]
     param(
         $AgentId
     )

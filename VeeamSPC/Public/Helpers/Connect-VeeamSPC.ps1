@@ -1,4 +1,5 @@
 ﻿function Connect-VeeamSPC {
+    [CmdletBinding()]
     param(
         $Server,
         $Port,

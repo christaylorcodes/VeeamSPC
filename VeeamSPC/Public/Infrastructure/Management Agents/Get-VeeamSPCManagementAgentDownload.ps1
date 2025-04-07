@@ -1,4 +1,5 @@
 ﻿function Get-VeeamSPCManagementAgentDownload {
+    [CmdletBinding()]
     param(
         $organizationUid,
         $locationUid,

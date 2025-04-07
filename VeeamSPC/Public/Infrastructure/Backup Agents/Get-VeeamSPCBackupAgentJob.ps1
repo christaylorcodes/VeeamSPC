@@ -1,4 +1,5 @@
 ﻿function Get-VeeamSPCBackupAgentJob {
+    [CmdletBinding()]
     param(
         $AgentId
     )

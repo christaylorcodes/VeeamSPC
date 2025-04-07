@@ -1,4 +1,5 @@
 ﻿function Get-VeeamSPCCompany {
+    [CmdletBinding()]
     param(
         $Expand = @('Organization')
     )

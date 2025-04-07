@@ -1,4 +1,5 @@
 ﻿function Get-VeeamSPCCompanyBackupResource {
+    [CmdletBinding()]
     param(
         $Company,
         $Site,

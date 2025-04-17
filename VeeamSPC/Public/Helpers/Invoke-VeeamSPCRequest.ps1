@@ -47,14 +47,14 @@
                     )
                 )
             }
-            else { $_ }
+            else {
+                $Splat = @{ ErrorAction = $PsBoundParameters['ErrorAction'] }
+                Write-Error @Splat -ErrorRecord $_
+            }
         }
 
         if ($Result.meta.pagingInfo) { Write-Verbose $Result.meta.pagingInfo }
         $Offset = $Result.meta.pagingInfo.count + $Result.meta.pagingInfo.offset
-        # Needed to adjust throttle settings
-        # https://helpcenter.veeam.com/docs/vac/rest/throttling.html
-        # if ($Offset -gt 0) { Start-Sleep -Milliseconds 500 }
         $Result.data
     }
     while ($Result.meta -and $Result.meta.pagingInfo.count + $Result.meta.pagingInfo.offset -lt $Result.meta.pagingInfo.total)

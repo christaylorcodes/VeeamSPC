@@ -1,6 +1,20 @@
 ﻿function Get-VeeamSPCBackupRepository {
-    [CmdletBinding()]
-    param()
+    [CmdletBinding(DefaultParameterSetName = 'All')]
+    param(
+        [Parameter(ParameterSetName = 'All')]
+        [Parameter(ParameterSetName = 'Server', Mandatory = $true)]
+        $backupServerUid,
+        [Parameter(ParameterSetName = 'Server')]
+        $repositoryUid
+    )
+
+    $QueryParams = @{ expand = 'BackupRepositoryInfo' }
     $URI = '/infrastructure/backupServers/repositories'
-    Invoke-VeeamSPCRequest -URI $URI -Method Get
+
+    if ($backupServerUid) {
+        $URI = "/infrastructure/backupServers/$($backupServerUid)/repositories"
+        if ($repositoryUid) { $URI = "$URI/$($repositoryUid)" }
+    }
+
+    Invoke-VeeamSPCRequest -URI $URI -Method Get -QueryParams $QueryParams
 }

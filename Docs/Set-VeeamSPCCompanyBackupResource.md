@@ -15,13 +15,14 @@ schema: 2.0.0
 ### Multi
 ```
 Set-VeeamSPCCompanyBackupResource -companyUid <Object> -siteUid <Object> -resourceUid <Object>
- -Multi <Hashtable[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+ -Multi <Hashtable[]> [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Single
 ```
 Set-VeeamSPCCompanyBackupResource -companyUid <Object> -siteUid <Object> -resourceUid <Object> [-OP] <Object>
- [-Value] <String> [[-From] <String>] [-Path] <Object> [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Value] <String> [[-From] <String>] [-Path] <Object> [-ProgressAction <ActionPreference>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -184,6 +185,21 @@ Parameter Sets: (All)
 Aliases: Site
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

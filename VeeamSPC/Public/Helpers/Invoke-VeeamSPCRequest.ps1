@@ -9,9 +9,10 @@
     if (!$script:VeeamSPCConnection) { throw 'Use Connect-VeeamSPC first.' }
 
     $Splat = @{
-        Method      = $Method
-        ContentType = 'application/json'
-        Headers     = $script:VeeamSPCConnection.Headers
+        Method         = $Method
+        ContentType    = 'application/json'
+        Headers        = $script:VeeamSPCConnection.Headers
+        ProgressAction = 'SilentlyContinue'
     }
     if ($Body) {
         $Splat.Body = $Body
@@ -47,10 +48,7 @@
                     )
                 )
             }
-            else {
-                $Splat = @{ ErrorAction = $PsBoundParameters['ErrorAction'] }
-                Write-Error @Splat -ErrorRecord $_
-            }
+            else { $PSCmdlet.WriteError($_) }
         }
 
         if ($Result.meta.pagingInfo) { Write-Verbose $Result.meta.pagingInfo }

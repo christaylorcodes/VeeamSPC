@@ -9,10 +9,9 @@
     if (!$script:VeeamSPCConnection) { throw 'Use Connect-VeeamSPC first.' }
 
     $Splat = @{
-        Method         = $Method
-        ContentType    = 'application/json'
-        Headers        = $script:VeeamSPCConnection.Headers
-        ProgressAction = 'SilentlyContinue'
+        Method      = $Method
+        ContentType = 'application/json'
+        Headers     = $script:VeeamSPCConnection.Headers
     }
     if ($Body) {
         $Splat.Body = $Body
@@ -35,9 +34,15 @@
         }
         $URL.Query = $Query.ToString()
         try {
+            $prevProgressPreference = $global:ProgressPreference
+            $global:ProgressPreference = 'SilentlyContinue'
+
             $Result = Invoke-RestMethod @Splat -Uri $URL.Uri.OriginalString
+
+            $global:ProgressPreference = $prevProgressPreference
         }
         catch {
+            $global:ProgressPreference = $prevProgressPreference
             if ($_.Exception.Message -eq 'The remote server returned an error: (429) Too Many Requests.') {
                 $PSCmdlet.ThrowTerminatingError(
                     [System.Management.Automation.ErrorRecord]::new(

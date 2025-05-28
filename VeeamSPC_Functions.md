@@ -63,9 +63,6 @@ Changes management mode of a Veeam backup agent with the specified UID to Manage
 ### [Invoke-VeeamSPCRequest](Docs\Invoke-VeeamSPCRequest.md)
 {{ Fill in the Synopsis }}
 
-### [Join-Url](Docs\Join-Url.md)
-{{ Fill in the Synopsis }}
-
 ### [New-VeeamSPCCompany](Docs\New-VeeamSPCCompany.md)
 {{ Fill in the Synopsis }}
 

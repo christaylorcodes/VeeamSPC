@@ -14,14 +14,14 @@ schema: 2.0.0
 
 ### Multi
 ```
-Set-VeeamSPCManagementAgent -managementAgentUid <Object> -Multi <Hashtable[]>
+Set-VeeamSPCManagementAgent [-managementAgentUid] <String> -Multi <Hashtable[]>
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Single
 ```
-Set-VeeamSPCManagementAgent -managementAgentUid <Object> [-OP] <Object> [-Value] <String> [-From <String>]
- [-Path] <Object> [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-VeeamSPCManagementAgent [-managementAgentUid] <String> -OP <String> -Value <String> [-From <String>]
+ -Path <String> [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,16 +38,16 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -managementAgentUid
+{{ Fill managementAgentUid Description }}
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
-Aliases: cf
+Aliases: AgentID
 
-Required: False
-Position: Named
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -57,28 +57,12 @@ Accept wildcard characters: False
 {{ Fill OP Description }}
 
 ```yaml
-Type: Object
-Parameter Sets: Single
-Aliases:
-Accepted values: add, replace, test, remove, move, copy
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Path
-{{ Fill Path Description }}
-
-```yaml
-Type: Object
+Type: String
 Parameter Sets: Single
 Aliases:
 
 Required: True
-Position: 3
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -93,22 +77,6 @@ Parameter Sets: Single
 Aliases:
 
 Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -130,13 +98,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -managementAgentUid
-{{ Fill managementAgentUid Description }}
+### -Path
+{{ Fill Path Description }}
 
 ```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases: AgentID
+Type: String
+Parameter Sets: Single
+Aliases:
 
 Required: True
 Position: Named
@@ -154,6 +122,37 @@ Parameter Sets: Multi
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

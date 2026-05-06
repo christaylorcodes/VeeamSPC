@@ -13,11 +13,11 @@ Allocate a new cloud backup resource to a company with the specified UID.
 ## SYNTAX
 
 ```
-New-VeeamSPCCompanyBackupResource [[-companyUid] <String>] [[-siteUid] <String>] [[-repositoryUid] <String>]
- [[-cloudRepositoryName] <String>] [[-storageQuota] <Int64>] [[-serversQuota] <Object>]
- [[-isServersQuotaUnlimited] <Object>] [[-workstationsQuota] <Object>]
- [[-isWorkstationsQuotaUnlimited] <Object>] [[-vmsQuota] <Object>] [[-isVmsQuotaUnlimited] <Object>]
- [[-isWanAccelerationEnabled] <Object>] [[-wanAcceleratorUid] <Object>] [[-isDefault] <Object>]
+New-VeeamSPCCompanyBackupResource [-TenantUid] <String> [-RepositoryUid] <String>
+ [-CloudRepositoryName] <String> [-StorageQuota] <Int64> [[-ServersQuota] <Int32>]
+ [[-IsServersQuotaUnlimited] <Boolean>] [[-WorkstationsQuota] <Int32>]
+ [[-IsWorkstationsQuotaUnlimited] <Boolean>] [[-VmsQuota] <Int32>] [[-IsVmsQuotaUnlimited] <Boolean>]
+ [[-IsWanAccelerationEnabled] <Boolean>] [[-WanAcceleratorUid] <String>] [[-IsDefault] <Boolean>]
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -43,16 +43,196 @@ Assigns a repository as a backup resource for a company/site. Give it a quota an
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -TenantUid
+UID of the tenant.
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RepositoryUid
+{{ Fill repositoryUid Description }}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CloudRepositoryName
+{{ Fill cloudRepositoryName Description }}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StorageQuota
+{{ Fill storageQuota Description }}
+
+```yaml
+Type: Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServersQuota
+{{ Fill serversQuota Description }}
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
 
 Required: False
-Position: Named
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsServersQuotaUnlimited
+{{ Fill isServersQuotaUnlimited Description }}
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WorkstationsQuota
+{{ Fill workstationsQuota Description }}
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsWorkstationsQuotaUnlimited
+{{ Fill isWorkstationsQuotaUnlimited Description }}
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VmsQuota
+{{ Fill vmsQuota Description }}
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsVmsQuotaUnlimited
+{{ Fill isVmsQuotaUnlimited Description }}
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 10
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsWanAccelerationEnabled
+{{ Fill isWanAccelerationEnabled Description }}
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 11
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WanAcceleratorUid
+{{ Fill wanAcceleratorUid Description }}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 12
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsDefault
+{{ Fill isDefault Description }}
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 13
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -74,211 +254,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -cloudRepositoryName
-{{ Fill cloudRepositoryName Description }}
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: String
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
 Required: False
-Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -companyUid
-{{ Fill companyUid Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -isDefault
-{{ Fill isDefault Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 13
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -isServersQuotaUnlimited
-{{ Fill isServersQuotaUnlimited Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 6
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -isVmsQuotaUnlimited
-{{ Fill isVmsQuotaUnlimited Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 10
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -isWanAccelerationEnabled
-{{ Fill isWanAccelerationEnabled Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 11
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -isWorkstationsQuotaUnlimited
-{{ Fill isWorkstationsQuotaUnlimited Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 8
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -repositoryUid
-{{ Fill repositoryUid Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -serversQuota
-{{ Fill serversQuota Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 5
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -siteUid
-{{ Fill siteUid Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -storageQuota
-{{ Fill storageQuota Description }}
-
-```yaml
-Type: Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -vmsQuota
-{{ Fill vmsQuota Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 9
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -wanAcceleratorUid
-{{ Fill wanAcceleratorUid Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 12
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -workstationsQuota
-{{ Fill workstationsQuota Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 7
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

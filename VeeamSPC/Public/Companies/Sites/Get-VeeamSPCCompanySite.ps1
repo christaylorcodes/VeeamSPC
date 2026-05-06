@@ -1,4 +1,22 @@
 function Get-VeeamSPCCompanySite {
+    <#
+    .SYNOPSIS
+        Lists or fetches Cloud Connect site tenants.
+
+    .DESCRIPTION
+        With -TenantUid: GET /infrastructure/sites/tenants/{TenantUid} (single).
+        Without: GET /infrastructure/sites/tenants. -CompanyUid filters via the
+        VSPC `assignedForCompany eq` filter.
+
+    .PARAMETER TenantUid
+        UID of a specific tenant.
+
+    .PARAMETER CompanyUid
+        UID of a company - used to filter tenants assigned to that company.
+
+    .EXAMPLE
+        Get-VeeamSPCCompanySite -CompanyUid $c
+    #>
     [CmdletBinding(DefaultParameterSetName = 'List')]
     param(
         [Parameter(ParameterSetName = 'Single', Mandatory)]

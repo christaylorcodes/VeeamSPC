@@ -12,9 +12,14 @@ schema: 2.0.0
 
 ## SYNTAX
 
+### List (Default)
 ```
-Get-VeeamSPCCompanySite [[-Company] <Object>] [[-Site] <Object>] [[-Resource] <Object>]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-VeeamSPCCompanySite [-CompanyUid <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+### Single
+```
+Get-VeeamSPCCompanySite -TenantUid <String> [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,46 +36,31 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -Company
-{{ Fill Company Description }}
+### -TenantUid
+UID of a specific tenant.
 
 ```yaml
-Type: Object
-Parameter Sets: (All)
+Type: String
+Parameter Sets: Single
 Aliases:
 
-Required: False
-Position: 0
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Resource
-{{ Fill Resource Description }}
+### -CompanyUid
+UID of a company - used to filter tenants assigned to that company.
 
 ```yaml
-Type: Object
-Parameter Sets: (All)
+Type: String
+Parameter Sets: List
 Aliases:
 
 Required: False
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Site
-{{ Fill Site Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

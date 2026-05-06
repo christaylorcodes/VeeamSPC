@@ -13,8 +13,8 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-Get-VeeamSPCManagementAgentDownload [[-organizationUid] <Object>] [[-locationUid] <Object>]
- [[-tokenExpiryPeriodDays] <Object>] [[-packageType] <Object>] [[-osType] <Object>] [[-OutputPath] <Object>]
+Get-VeeamSPCManagementAgentDownload [[-OrganizationUid] <String>] [[-LocationUid] <String>]
+ [[-TokenExpiryPeriodDays] <Int32>] [[-PackageType] <String>] [[-OsType] <String>]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
@@ -32,26 +32,11 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -OutputPath
-{{ Fill OutputPath Description }}
+### -OrganizationUid
+{{ Fill organizationUid Description }}
 
 ```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 5
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -locationUid
-{{ Fill locationUid Description }}
-
-```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -62,45 +47,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -organizationUid
-{{ Fill organizationUid Description }}
+### -LocationUid
+{{ Fill locationUid Description }}
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 0
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -osType
-{{ Fill osType Description }}
+### -TokenExpiryPeriodDays
+{{ Fill tokenExpiryPeriodDays Description }}
 
 ```yaml
-Type: Object
+Type: Int32
 Parameter Sets: (All)
 Aliases:
-Accepted values: x86, x64
-
-Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -packageType
-{{ Fill packageType Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-Accepted values: msi, exe
 
 Required: False
 Position: 3
@@ -109,16 +77,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -tokenExpiryPeriodDays
-{{ Fill tokenExpiryPeriodDays Description }}
+### -PackageType
+{{ Fill packageType Description }}
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OsType
+{{ Fill osType Description }}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

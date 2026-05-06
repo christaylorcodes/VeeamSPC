@@ -13,8 +13,10 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-New-VeeamSPCCompany [[-Name] <Object>] [[-ExternalId] <Object>] [-ProgressAction <ActionPreference>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+New-VeeamSPCCompany [-Name] <String> [[-ExternalId] <String>] [-OwnerCredentials] <PSCredential>
+ [[-Country] <Int32>] [[-Notes] <String>] [[-ResellerUid] <String>] [[-SubscriptionPlanUid] <String>]
+ [[-IsRestAccessEnabled] <Boolean>] [[-IsAlarmDetectEnabled] <Boolean>] [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,16 +33,16 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -Name
+{{ Fill Name Description }}
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
-Required: False
-Position: Named
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -50,28 +52,118 @@ Accept wildcard characters: False
 {{ Fill ExternalId Description }}
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
-{{ Fill Name Description }}
+### -OwnerCredentials
+Credentials for the company portal owner account.
 
 ```yaml
-Type: Object
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Country
+Numeric VSPC country code. Defaults to 1 (USA).
+
+```yaml
+Type: Int32
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 0
+Position: 4
+Default value: 1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Notes
+Free-form notes attached to the organization record.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResellerUid
+Optional reseller UID this company belongs to.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionPlanUid
+Optional subscription plan UID.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsRestAccessEnabled
+Enable VSPC REST API access for this tenant.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsAlarmDetectEnabled
+Enable VSPC alarm detection for this tenant.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -84,6 +176,21 @@ The cmdlet is not run.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named

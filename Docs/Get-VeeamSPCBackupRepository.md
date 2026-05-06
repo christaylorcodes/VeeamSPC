@@ -14,13 +14,13 @@ Returns a collection resource representation of all Veeam Backup & Replication s
 
 ### All (Default)
 ```
-Get-VeeamSPCBackupRepository [-backupServerUid <Object>] [-ProgressAction <ActionPreference>]
+Get-VeeamSPCBackupRepository [-BackupServerUid <String>] [-ProgressAction <ActionPreference>]
  [<CommonParameters>]
 ```
 
 ### Server
 ```
-Get-VeeamSPCBackupRepository -backupServerUid <Object> [-repositoryUid <Object>]
+Get-VeeamSPCBackupRepository -BackupServerUid <String> [-RepositoryUid <String>]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
@@ -38,11 +38,11 @@ Returns a collection resource representation of all Veeam Backup & Replication s
 
 ## PARAMETERS
 
-### -backupServerUid
+### -BackupServerUid
 {{ Fill backupServerUid Description }}
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: All
 Aliases:
 
@@ -54,11 +54,26 @@ Accept wildcard characters: False
 ```
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: Server
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RepositoryUid
+{{ Fill repositoryUid Description }}
+
+```yaml
+Type: String
+Parameter Sets: Server
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -72,21 +87,6 @@ Accept wildcard characters: False
 Type: ActionPreference
 Parameter Sets: (All)
 Aliases: proga
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -repositoryUid
-{{ Fill repositoryUid Description }}
-
-```yaml
-Type: Object
-Parameter Sets: Server
-Aliases:
 
 Required: False
 Position: Named

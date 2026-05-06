@@ -1,4 +1,14 @@
-﻿function Get-VeeamSPCOrganization {
+function Get-VeeamSPCOrganization {
+    <#
+    .SYNOPSIS
+        Lists organizations.
+
+    .DESCRIPTION
+        GET /organizations.
+
+    .EXAMPLE
+        Get-VeeamSPCOrganization
+    #>
     [CmdletBinding()]
     param()
     $URI = 'organizations'

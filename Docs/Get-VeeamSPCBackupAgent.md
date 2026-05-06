@@ -13,7 +13,7 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-Get-VeeamSPCBackupAgent [[-AgentId] <Object>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-VeeamSPCBackupAgent [[-AgentId] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,12 +34,12 @@ PS C:\> {{ Add example code here }}
 {{ Fill AgentId Description }}
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

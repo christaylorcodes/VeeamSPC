@@ -14,15 +14,14 @@ schema: 2.0.0
 
 ### Multi
 ```
-Set-VeeamSPCCompanyBackupResource -companyUid <Object> -siteUid <Object> -resourceUid <Object>
- -Multi <Hashtable[]> [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-VeeamSPCCompanyBackupResource [-TenantUid] <String> [-ResourceUid] <String> -Multi <Hashtable[]>
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Single
 ```
-Set-VeeamSPCCompanyBackupResource -companyUid <Object> -siteUid <Object> -resourceUid <Object> [-OP] <Object>
- [-Value] <String> [[-From] <String>] [-Path] <Object> [-ProgressAction <ActionPreference>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Set-VeeamSPCCompanyBackupResource [-TenantUid] <String> [-ResourceUid] <String> -OP <String> -Value <String>
+ [-From <String>] -Path <String> [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,15 +38,60 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -TenantUid
+UID of the tenant.
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
-Required: False
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceUid
+{{ Fill resourceUid Description }}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: Resource
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OP
+{{ Fill OP Description }}
+
+```yaml
+Type: String
+Parameter Sets: Single
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Value
+{{ Fill Value Description }}
+
+```yaml
+Type: String
+Parameter Sets: Single
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -63,23 +107,7 @@ Parameter Sets: Single
 Aliases:
 
 Required: False
-Position: 6
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OP
-{{ Fill OP Description }}
-
-```yaml
-Type: Object
-Parameter Sets: Single
-Aliases:
-Accepted values: add, replace, test, remove, move, copy
-
-Required: True
-Position: 3
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -89,55 +117,9 @@ Accept wildcard characters: False
 {{ Fill Path Description }}
 
 ```yaml
-Type: Object
-Parameter Sets: Single
-Aliases:
-
-Required: True
-Position: 5
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Value
-{{ Fill Value Description }}
-
-```yaml
 Type: String
 Parameter Sets: Single
 Aliases:
-
-Required: True
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -companyUid
-{{ Fill companyUid Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases: Company
 
 Required: True
 Position: Named
@@ -161,30 +143,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -resourceUid
-{{ Fill resourceUid Description }}
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: Object
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: Resource
+Aliases: wi
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -siteUid
-{{ Fill siteUid Description }}
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: Object
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: Site
+Aliases: cf
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -12,7 +12,7 @@
     RootModule        = 'VeeamSPC.psm1'
 
     # Version number of this module.
-    ModuleVersion = '0.2.0'
+    ModuleVersion = '0.2.1'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
@@ -69,16 +69,16 @@
     # NestedModules = @()
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport = @('Get-VeeamSPCCompanyBackupResource','New-VeeamSPCCompanyBackupResource','Set-VeeamSPCCompanyBackupResource','Get-VeeamSPCCompanySite','New-VeeamSPCCompanySite','Set-VeeamSPCCompanySite','Get-VeeamSPCCompany','New-VeeamSPCCompany','Set-VeeamSPCCompany','Get-VeeamSPCDiscoveredComputer','Connect-VeeamSPC','Get-VeeamSPCAbout','Invoke-VeeamSPCRequest','Get-VeeamSPCBackupAgent','Get-VeeamSPCBackupAgentJob','Initialize-VeeamSPCBackupAgent','Get-VeeamSPCBackupRepository','Get-VeeamSPCManagementAgent','Get-VeeamSPCManagementAgentDownload','Get-VeeamSPCUnverifiedManagementAgent','Receive-VeeamSPCUnverifiedManagementAgent','Set-VeeamSPCManagementAgent','Get-VeeamSPCCloudConnectSite','Get-VeeamSPCCloudGatewayPool','Get-VeeamSPCOrganization','Set-VeeamSPCOrganization','Get-VeeamSPCUser')
+    FunctionsToExport = @('Get-VeeamSPCCompanyBackupResource','New-VeeamSPCCompanyBackupResource','Set-VeeamSPCCompanyBackupResource','Get-VeeamSPCCompanySite','New-VeeamSPCCompanySite','Set-VeeamSPCCompanySite','Get-VeeamSPCCompany','New-VeeamSPCCompany','Set-VeeamSPCCompany','Get-VeeamSPCDiscoveredComputer','Connect-VeeamSPC','Disconnect-VeeamSPC','Get-VeeamSPCAbout','Invoke-VeeamSPCRequest','Get-VeeamSPCBackupAgent','Get-VeeamSPCBackupAgentJob','Initialize-VeeamSPCBackupAgent','Get-VeeamSPCBackupRepository','Get-VeeamSPCManagementAgent','Get-VeeamSPCManagementAgentDownload','Get-VeeamSPCUnverifiedManagementAgent','Receive-VeeamSPCUnverifiedManagementAgent','Set-VeeamSPCManagementAgent','Get-VeeamSPCCloudConnectSite','Get-VeeamSPCCloudGatewayPool','Get-VeeamSPCOrganization','Set-VeeamSPCOrganization','Get-VeeamSPCUser')
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
     # CmdletsToExport   = '*'
 
     # Variables to export from this module
-    VariablesToExport = '*'
+    VariablesToExport = @()
 
     # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-    AliasesToExport = @('')
+    AliasesToExport = @()
 
     # DSC resources to export from this module
     # DscResourcesToExport = @()
@@ -107,7 +107,22 @@
             IconUri      = 'https://raw.githubusercontent.com/christaylorcodes/VeeamSPC/main/Media/VeeamIcon.png'
 
             # ReleaseNotes of this module
-            ReleaseNotes = 'https://github.com/christaylorcodes/VeeamSPC/releases'
+            ReleaseNotes = @'
+0.2.1
+- Comment-based help added for all public cmdlets (Get-Help now populated).
+- New cmdlet: Disconnect-VeeamSPC clears cached session state.
+- Initialize-VeeamSPCBackupAgent and Receive-VeeamSPCUnverifiedManagementAgent
+  now support -WhatIf / -Confirm.
+- Invoke-VeeamSPCRequest honours -WhatIf / -Confirm for Post/Patch/Put/Delete.
+- ConvertTo-Json -Depth 10 standardised across all New-/Set- cmdlets to avoid
+  silent body truncation.
+- New-VeeamSPCCompany no longer hardcodes country/notes; new -Country and
+  -Notes parameters (country defaults to 1 / USA for backward compatibility).
+- Parameter typing tightened across cmdlets; PascalCase aliases added.
+- Manifest: VariablesToExport / AliasesToExport tightened to @().
+
+Full history: https://github.com/christaylorcodes/VeeamSPC/releases
+'@
 
         } # End of PSData hashtable
 

@@ -54,6 +54,11 @@ function Invoke-VeeamSPCRequest {
 
     $useWebRequest = $Method -ne 'Get'
 
+    # Honour -WhatIf / -Confirm propagated from caller for mutating verbs only.
+    if ($Method -in 'Post', 'Patch', 'Put', 'Delete') {
+        if (-not $PSCmdlet.ShouldProcess($URL.Uri.OriginalString, $Method)) { return }
+    }
+
     $Offset = 0
     $MaxIterations = 1000
     $Iteration = 0

@@ -5,45 +5,30 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-VeeamSPCManagementAgent
+# Disconnect-VeeamSPC
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Clears the cached VSPC session state.
 
 ## SYNTAX
 
 ```
-Get-VeeamSPCManagementAgent [[-AgentId] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Disconnect-VeeamSPC [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Nulls $Script:VeeamSPCConnection so subsequent cmdlets fail fast with
+'Use Connect-VeeamSPC first.' Does not call any logout endpoint - the
+VSPC Bearer token is server-issued and stateless on the client side.
 
 ## EXAMPLES
 
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
+### EXAMPLE 1
 ```
-
-{{ Add example description here }}
+Disconnect-VeeamSPC
+```
 
 ## PARAMETERS
-
-### -AgentId
-{{ Fill AgentId Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -ProgressAction
 {{ Fill ProgressAction Description }}
@@ -65,10 +50,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
 ## OUTPUTS
 
-### System.Object
 ## NOTES
 
 ## RELATED LINKS

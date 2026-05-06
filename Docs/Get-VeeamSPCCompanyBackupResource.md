@@ -13,7 +13,7 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-Get-VeeamSPCCompanyBackupResource [[-Company] <Object>] [[-Site] <Object>] [[-Resource] <Object>]
+Get-VeeamSPCCompanyBackupResource [-TenantUid] <String> [[-ResourceUid] <String>]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
@@ -31,46 +31,31 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -Company
-{{ Fill Company Description }}
+### -TenantUid
+UID of the tenant whose backup resources are listed.
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
-Position: 0
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Resource
-{{ Fill Resource Description }}
+### -ResourceUid
+UID of a specific backup resource.
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Site
-{{ Fill Site Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

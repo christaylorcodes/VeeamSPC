@@ -13,9 +13,9 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-New-VeeamSPCCompanySite [[-Company] <Object>] [[-siteUid] <Object>] [[-Credential] <PSCredential>]
- [-gatewaySelectionType <Object>] [-gatewayPoolsUids <Array>] [-ProgressAction <ActionPreference>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+New-VeeamSPCCompanySite [-SiteUid] <String> [-Credential] <PSCredential> [[-CompanyUid] <String>]
+ [[-GatewaySelectionType] <String>] [[-GatewayPoolsUids] <String[]>] [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,31 +32,16 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -Company
-{{ Fill Company Description }}
+### -SiteUid
+{{ Fill siteUid Description }}
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -70,8 +55,53 @@ Type: PSCredential
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CompanyUid
+UID of the company this tenant belongs to.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GatewaySelectionType
+{{ Fill gatewaySelectionType Description }}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GatewayPoolsUids
+{{ Fill gatewayPoolsUids Description }}
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -93,43 +123,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -siteUid
-{{ Fill siteUid Description }}
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: Object
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -gatewayPoolsUids
-{{ Fill gatewayPoolsUids Description }}
-
-```yaml
-Type: Array
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -gatewaySelectionType
-{{ Fill gatewaySelectionType Description }}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
 Required: False
 Position: Named

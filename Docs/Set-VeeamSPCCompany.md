@@ -14,13 +14,13 @@ schema: 2.0.0
 
 ### Multi
 ```
-Set-VeeamSPCCompany -companyUid <Object> -Multi <Hashtable[]> [-ProgressAction <ActionPreference>] [-WhatIf]
+Set-VeeamSPCCompany [-companyUid] <String> -Multi <Hashtable[]> [-ProgressAction <ActionPreference>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### Single
 ```
-Set-VeeamSPCCompany -companyUid <Object> [-OP] <Object> [-Value] <String> [[-From] <String>] [-Path] <Object>
+Set-VeeamSPCCompany [-companyUid] <String> -OP <String> -Value <String> [-From <String>] -Path <String>
  [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -38,15 +38,45 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -companyUid
+{{ Fill companyUid Description }}
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
-Aliases: cf
+Aliases: CompanyID
 
-Required: False
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OP
+{{ Fill OP Description }}
+
+```yaml
+Type: String
+Parameter Sets: Single
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Value
+{{ Fill Value Description }}
+
+```yaml
+Type: String
+Parameter Sets: Single
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -62,23 +92,7 @@ Parameter Sets: Single
 Aliases:
 
 Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OP
-{{ Fill OP Description }}
-
-```yaml
-Type: Object
-Parameter Sets: Single
-Aliases:
-Accepted values: add, replace, test, remove, move, copy
-
-Required: True
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -88,27 +102,27 @@ Accept wildcard characters: False
 {{ Fill Path Description }}
 
 ```yaml
-Type: Object
-Parameter Sets: Single
-Aliases:
-
-Required: True
-Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Value
-{{ Fill Value Description }}
-
-```yaml
 Type: String
 Parameter Sets: Single
 Aliases:
 
 Required: True
-Position: 2
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Multi
+{{ Fill Multi Description }}
+
+```yaml
+Type: Hashtable[]
+Parameter Sets: Multi
+Aliases:
+
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -130,30 +144,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -companyUid
-{{ Fill companyUid Description }}
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: Object
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: CompanyID
+Aliases: cf
 
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Multi
-{{ Fill Multi Description }}
-
-```yaml
-Type: Hashtable[]
-Parameter Sets: Multi
-Aliases:
-
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

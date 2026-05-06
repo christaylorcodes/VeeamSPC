@@ -1,4 +1,29 @@
 function Connect-VeeamSPC {
+    <#
+    .SYNOPSIS
+        Establishes a session against a Veeam Service Provider Console server.
+
+    .DESCRIPTION
+        Stores connection state (Bearer token, headers, base URI, certificate
+        handling) in a script-scope hashtable and validates it by calling
+        Get-VeeamSPCAbout. All other VeeamSPC cmdlets read from this state.
+
+    .PARAMETER Server
+        VSPC server hostname or IP.
+
+    .PARAMETER Port
+        VSPC REST port. Defaults to 1280.
+
+    .PARAMETER Key
+        Bearer API key issued by the VSPC server.
+
+    .PARAMETER SkipCertificateCheck
+        Bypass TLS certificate validation. On Windows PowerShell 5.1 this
+        installs a process-wide ServicePointManager callback.
+
+    .EXAMPLE
+        Connect-VeeamSPC -Server vspc.lab.local -Key $apiKey -SkipCertificateCheck
+    #>
     [CmdletBinding()]
     param(
         [Parameter(Mandatory)]
@@ -16,10 +41,10 @@ function Connect-VeeamSPC {
 
     $Script:VeeamSPCConnection = @{
         Headers              = @{
-            Authorization     = "Bearer $Key"
-            Accept            = 'application/json'
+            Authorization      = "Bearer $Key"
+            Accept             = 'application/json'
             'X-Client-Version' = '3.6.2'
-            'User-Agent'      = $userAgent
+            'User-Agent'       = $userAgent
         }
         Server               = $Server
         Port                 = $Port

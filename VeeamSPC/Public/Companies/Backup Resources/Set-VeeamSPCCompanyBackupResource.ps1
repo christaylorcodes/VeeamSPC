@@ -1,19 +1,14 @@
-﻿function Set-VeeamSPCCompanyBackupResource {
+function Set-VeeamSPCCompanyBackupResource {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '', Justification = 'Used by sub-function')]
     [CmdletBinding(SupportsShouldProcess)]
     param(
         [Parameter(Mandatory, ParameterSetName = 'Single', Position = 0)]
         [Parameter(Mandatory, ParameterSetName = 'Multi', Position = 0)]
-        [Alias('Company')]
-        $companyUid,
+        [string]$TenantUid,
         [Parameter(Mandatory, ParameterSetName = 'Single', Position = 1)]
         [Parameter(Mandatory, ParameterSetName = 'Multi', Position = 1)]
-        [Alias('Site')]
-        $siteUid,
-        [Parameter(Mandatory, ParameterSetName = 'Single', Position = 2)]
-        [Parameter(Mandatory, ParameterSetName = 'Multi', Position = 2)]
         [Alias('Resource')]
-        $resourceUid,
+        [string]$ResourceUid,
         [Parameter(Mandatory, ParameterSetName = 'Single')]
         [ValidateSet('add', 'replace', 'test', 'remove', 'move', 'copy')]
         $OP,
@@ -26,7 +21,7 @@
         [Parameter(Mandatory, ParameterSetName = 'Multi')]
         [hashtable[]]$Multi
     )
-    $URI = 'organizations/companies/{0}/sites/{1}/backupResources/{2}' -f $companyUid, $siteUid, $resourceUid
+    $URI = 'infrastructure/sites/tenants/{0}/backupResources/{1}' -f $TenantUid, $ResourceUid
     if ($Multi) { $Body = ConvertTo-Json $Multi }
     else {
         $Patch = @{

@@ -17,4 +17,6 @@ Foreach ($import in @($Public + $Private)) {
 # Set variables visible to the module and its functions only
 Add-Type -AssemblyName System.Web
 
+$Script:VeeamSPCModuleVersion = (Test-ModuleManifest -Path "$PSScriptRoot\VeeamSPC.psd1" -ErrorAction SilentlyContinue).Version
+
 Export-ModuleMember -Function $Public.Basename

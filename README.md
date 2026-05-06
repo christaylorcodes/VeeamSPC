@@ -31,7 +31,9 @@ PowerShell module for interacting with the REST API
 
 <!-- Summary -->
 
-This module allows for interaction with Veeam Service Provider Console via their <a href="https://helpcenter.veeam.com/docs/vac/rest/reference/vspc-rest.html">REST API</a>
+This module allows for interaction with Veeam Service Provider Console via their [REST API](https://helpcenter.veeam.com/references/vac/9.2/rest/3.6.2/).
+
+**Targets VSPC 9.2 / REST API 3.6.2.** A copy of the OpenAPI 3.0 spec is vendored at [`Docs/Reference/VSPC-3.6.2-OpenApi_3_0.json`](Docs/Reference/VSPC-3.6.2-OpenApi_3_0.json) for offline reference.
 
 <!-- Summary -->
 

@@ -1,13 +1,10 @@
-﻿function Set-VeeamSPCCompanySite {
+function Set-VeeamSPCCompanySite {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '', Justification = 'Used by sub-function')]
     [CmdletBinding(SupportsShouldProcess)]
     param(
         [Parameter(Mandatory, ParameterSetName = 'Single', Position = 0)]
         [Parameter(Mandatory, ParameterSetName = 'Multi', Position = 0)]
-        $companyUid,
-        [Parameter(Mandatory, ParameterSetName = 'Single', Position = 1)]
-        [Parameter(Mandatory, ParameterSetName = 'Multi', Position = 1)]
-        $siteUid,
+        [string]$TenantUid,
         [Parameter(Mandatory, ParameterSetName = 'Single')]
         [ValidateSet('add', 'replace', 'test', 'remove', 'move', 'copy')]
         $OP,
@@ -20,7 +17,7 @@
         [Parameter(Mandatory, ParameterSetName = 'Multi')]
         [hashtable[]]$Multi
     )
-    $URI = "/organizations/companies/$companyUid/sites/$siteUid"
+    $URI = "infrastructure/sites/tenants/$TenantUid"
     if ($Multi) { $Body = ConvertTo-Json $Multi }
     else {
         $Patch = @{

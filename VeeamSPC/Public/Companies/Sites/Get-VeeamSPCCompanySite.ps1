@@ -1,18 +1,23 @@
-﻿function Get-VeeamSPCCompanySite {
-    [CmdletBinding()]
+function Get-VeeamSPCCompanySite {
+    [CmdletBinding(DefaultParameterSetName = 'List')]
     param(
-        $Company,
-        $Site,
-        $Resource
+        [Parameter(ParameterSetName = 'Single', Mandatory)]
+        [string]$TenantUid,
+
+        [Parameter(ParameterSetName = 'List')]
+        [string]$CompanyUid
     )
-    $URI = 'organizations/companies/sites'
-    if ($Company) {
-        $URI = "organizations/companies/$($Company)/sites"
-        if ($Site) {
-            $URI = Join-Url $URI $Site
-            if ($Resource) { $URI = Join-Url $URI $Resource }
-        }
+
+    if ($TenantUid) {
+        $URI = "infrastructure/sites/tenants/$TenantUid"
+        Invoke-VeeamSPCRequest -URI $URI -Method Get
+        return
     }
 
-    Invoke-VeeamSPCRequest -URI $URI -Method Get
+    $URI = 'infrastructure/sites/tenants'
+    $QueryParams = $null
+    if ($CompanyUid) {
+        $QueryParams = @{ filter = "assignedForCompany eq '$CompanyUid'" }
+    }
+    Invoke-VeeamSPCRequest -URI $URI -Method Get -QueryParams $QueryParams
 }

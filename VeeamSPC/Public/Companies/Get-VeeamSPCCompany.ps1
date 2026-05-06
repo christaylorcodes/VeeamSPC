@@ -4,6 +4,6 @@
         $Expand = @('Organization')
     )
     $URI = 'organizations/companies'
-    $QueryParams = @{ expand = $Expand }
+    $QueryParams = @{ expand = ($Expand -join ',') }
     Invoke-VeeamSPCRequest -URI $URI -Method Get -QueryParams $QueryParams
 }

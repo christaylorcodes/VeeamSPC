@@ -1,12 +1,14 @@
-﻿function Get-VeeamSPCCompanyBackupResource {
+function Get-VeeamSPCCompanyBackupResource {
     [CmdletBinding()]
     param(
-        $Company,
-        $Site,
-        $Resource
+        [Parameter(Mandatory)]
+        [string]$TenantUid,
+
+        [string]$ResourceUid
     )
-    $URI = "organizations/companies/$($Company)/sites/$($Site)/backupResources"
-    if ($Resource) { $URI = Join-Url $URI $Resource }
+
+    $URI = "infrastructure/sites/tenants/$TenantUid/backupResources"
+    if ($ResourceUid) { $URI = Join-Url $URI $ResourceUid }
 
     Invoke-VeeamSPCRequest -URI $URI -Method Get
 }

@@ -1,11 +1,14 @@
-﻿function New-VeeamSPCCompanyBackupResource {
+function New-VeeamSPCCompanyBackupResource {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '', Justification = 'Used by sub-function')]
     [CmdletBinding(SupportsShouldProcess)]
     param(
-        [string]$companyUid,
-        [string]$siteUid,
+        [Parameter(Mandatory)]
+        [string]$TenantUid,
+        [Parameter(Mandatory)]
         [string]$repositoryUid,
+        [Parameter(Mandatory)]
         [string]$cloudRepositoryName,
+        [Parameter(Mandatory)]
         [long]$storageQuota,
         $serversQuota,
         $isServersQuotaUnlimited = $true,
@@ -17,7 +20,7 @@
         $wanAcceleratorUid,
         $isDefault = $false
     )
-    $URI = "/organizations/companies/$($companyUid)/sites/$($siteUid)/backupResources"
+    $URI = "infrastructure/sites/tenants/$TenantUid/backupResources"
     $Body = @{
         repositoryUid                = $repositoryUid
         cloudRepositoryName          = $cloudRepositoryName

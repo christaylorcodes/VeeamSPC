@@ -12,7 +12,7 @@
     RootModule        = 'VeeamSPC.psm1'
 
     # Version number of this module.
-    ModuleVersion = '0.1.8'
+    ModuleVersion = '0.2.0'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
@@ -69,7 +69,7 @@
     # NestedModules = @()
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport = @('Get-VeeamSPCCompanyBackupResource','New-VeeamSPCCompanyBackupResource','Set-VeeamSPCCompanyBackupResource','Get-VeeamSPCCompanySite','New-VeeamSPCCompanySite','Set-VeeamSPCCompanySite','Get-VeeamSPCCompany','New-VeeamSPCCompany','Set-VeeamSPCCompany','Get-VeeamSPCDiscoveredComputer','Connect-VeeamSPC','Invoke-VeeamSPCRequest','Get-VeeamSPCBackupAgent','Get-VeeamSPCBackupAgentJob','Initialize-VeeamSPCBackupAgent','Get-VeeamSPCBackupRepository','Get-VeeamSPCManagementAgent','Get-VeeamSPCManagementAgentDownload','Get-VeeamSPCUnverifiedManagementAgent','Receive-VeeamSPCUnverifiedManagementAgent','Set-VeeamSPCManagementAgent','Get-VeeamSPCCloudConnectSite','Get-VeeamSPCCloudGatewayPool','Get-VeeamSPCOrganization','Set-VeeamSPCOrganization','Get-VeeamSPCUser')
+    FunctionsToExport = @('Get-VeeamSPCCompanyBackupResource','New-VeeamSPCCompanyBackupResource','Set-VeeamSPCCompanyBackupResource','Get-VeeamSPCCompanySite','New-VeeamSPCCompanySite','Set-VeeamSPCCompanySite','Get-VeeamSPCCompany','New-VeeamSPCCompany','Set-VeeamSPCCompany','Get-VeeamSPCDiscoveredComputer','Connect-VeeamSPC','Get-VeeamSPCAbout','Invoke-VeeamSPCRequest','Get-VeeamSPCBackupAgent','Get-VeeamSPCBackupAgentJob','Initialize-VeeamSPCBackupAgent','Get-VeeamSPCBackupRepository','Get-VeeamSPCManagementAgent','Get-VeeamSPCManagementAgentDownload','Get-VeeamSPCUnverifiedManagementAgent','Receive-VeeamSPCUnverifiedManagementAgent','Set-VeeamSPCManagementAgent','Get-VeeamSPCCloudConnectSite','Get-VeeamSPCCloudGatewayPool','Get-VeeamSPCOrganization','Set-VeeamSPCOrganization','Get-VeeamSPCUser')
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
     # CmdletsToExport   = '*'
